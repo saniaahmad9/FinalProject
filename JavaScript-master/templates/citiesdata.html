@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>citiesdata</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link rel="stylesheet" href="static/css/style.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+
+  <style>
+    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {width: 120px;background: #222;}
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {margin-left: 120px}
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+    /* Add a right margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {margin-right: 120px}
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {#main {margin-right: 0}}
+    </style>
+    <body class="w3-black">
+    
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+      <!-- Avatar image in top left corner -->
+      <!-- <img src="/w3images/avatar_smoke.jpg" style="width:100%"> -->
+      <a href="homepage.html" class="w3-bar-item w3-button w3-padding-large w3-black">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+      </a>
+      <a href="ISSlive.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-rss feed w3-xxlarge"></i>
+        <p>ISS live</p>
+      </a>
+      <a href="predictionmap.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-map w3-xxlarge"></i>
+        <p>ISS Prediction Map</p>
+      </a>
+      <a href="citiesdata.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-plane to all w3-xxlarge"></i>
+        <p>Citiesdata</p>
+      </a>
+      <a href="tableau.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-puzzle-piece to all w3-xxlarge"></i>
+        <p>Tableau</p>
+      </a>
+      <a href="gallery.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-image to all w3-xxlarge"></i>
+        <p>ISS Gallery</p>
+      </a>
+    </nav>
+<!-- Navbar -->
+
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="citiesdata.html">Citiesdata
+            <img class="nav-ufo" src="../static/images/Gallery3.jpg">
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>ISS Data</h1>
+      <p>ISS Over your House</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters">
+            <div class="panel panel-default">
+              <div class="panel-heading">Filter Search</div>
+              <div class="panel-body">
+                <form>
+                  <div class="form-group">
+                    <ul class="list-group" id="filters">
+                      <li class="filter list-group-item">
+                        <label for="date">Enter a City</label>
+                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table id="ufo-table" class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="table-head">Latitude</th>
+                  <th class="table-head">Longitude</th>
+                  <th class="table-head">TimeStamp</th>
+                  <th class="table-head">Prediction</th>
+                  <th class="table-head">Collected Date/Time</th>
+                  <th class="table-head">Predicted Date/Time</th>
+                  <th class="table-head">City</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="bottom">ISS Data</span>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="static/js/df1.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+
+</html>
