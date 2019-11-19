@@ -98,7 +98,7 @@ select {
   padding: 20px;
   margin: 0;
   background: black;
-  background-image: url("../images/iss1.jpeg");
+  background-image: url("../static/images/Gallery3.jpg");
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;

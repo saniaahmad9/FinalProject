@@ -1,30 +1,8 @@
-const scanDate= moment().format("MMM Do YY");
+// from data.js
+var tableData = data;
 
-console.log(scanDate)
-
-d3.select(".foo").text(`${scanDate}`)
-var div = document.getElementById('curr_time');
-function time() {
- div.innerHTML = "";
- var d = new Date();
- var s = d.getSeconds();
- var m = d.getMinutes();
- var h = d.getHours();
- div.innerHTML = h + ":" + m + ":" + s;
-}
-setInterval(time, 1000);
-
-const tbody = d3.select('tbody')
-
-function init() {
-  var url = "/CityNames";
-  d3.json(url).then( (data) => {
-    // Attach an event to listen for the form button
-    // Build the table when the page loads
-    buildTable(data);
-  })
-}
-
+// get table references
+var tbody = d3.select("tbody");
 
 function buildTable(data) {
   // First, clear out any existing data
@@ -40,48 +18,34 @@ function buildTable(data) {
     // each value as a table cell (td)
     Object.values(dataRow).forEach((val) => {
       var cell = row.append("td");
-      cell.text(val);
-    });
+        cell.text(val);
+      }
+    );
   });
 }
 
 function handleClick() {
 
-  // Prevent the form from refreshing the page
-  d3.event.preventDefault();
-
   // Grab the datetime value from the filter
-  var city = d3.select("#City").property("value");
+  var City = d3.select("#city").property("value");
+  let filteredData = tableData;
 
   // Check to see if a date was entered and filter the
   // data using that date.
-  if (city) {
+  if (City) {
     // Apply `filter` to the table data to only keep the
-    const filteredData = data.filter(function(row) {
-      return row.city === city;
-    });
-    buildTable(filteredData);
-  } else {
-    buildTable(data)
+    // rows where the `datetime` value matches the filter value
+    filteredData = filteredData.filter(row => row.City === City);
   }
-  
+
+  // Rebuild the table using the filtered data
+  // @NOTE: If no date was entered, then filteredData will
+  // just be the original tableData.
+  buildTable(filteredData);
 }
 
-init()
-
+// Attach an event to listen for the form button
 d3.selectAll("#filter-btn").on("click", handleClick);
-/*
-const scanDate= moment().format("MMM Do YY");
-console.log(scanDate)
-d3.select(".foo").text(${scanDate})
-var div = document.getElementById('curr_time');
-function time() {
- div.innerHTML = "";
- var d = new Date();
- var s = d.getSeconds();
- var m = d.getMinutes();
- var h = d.getHours();
- div.innerHTML = h + ":" + m + ":" + s;
-}
-setInterval(time, 1000);
-*/
+
+// Build the table when the page loads
+buildTable(tableData);
