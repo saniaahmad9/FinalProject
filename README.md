@@ -1,4 +1,6 @@
-### FinalProject
+# GWU Bootcamp Final Project 
+###Project completed by: Sania Ahmad, Haris Nawzadi, Sayed Zewari
+
 For our Final Project, we built a Flask app all about the International Space Station (ISS). View our site to see a live ISS tracker and learn more about the path the ISS takes around the world.
 
 **View our live app here: https://issproject.herokuapp.com/homepage**
